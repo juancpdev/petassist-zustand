@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fondo {
+    background-color: #141414;
+}
+
+.sombras-md {
+    box-shadow: 0 0 10px 3px rgba(95, 95, 95, 0.404);
+}
