@@ -7,7 +7,7 @@ export type PatientDetailsProp = {
 
 export default function PatientDetails({patient} : PatientDetailsProp)  {
   return (
-    <div className=" sombras-md rounded-lg py-6 px-5 mb-10 text-white bg-cuadros space-y-2">
+    <div className=" sombras-md rounded-lg py-6 px-5 mb-5 text-white bg-cuadros space-y-2">
         <PatientDetailItem label ='ID' data = {patient.id} />
         <PatientDetailItem label ='Paciente' data = {patient.name} />
         <PatientDetailItem label ='Email' data = {patient.email} />

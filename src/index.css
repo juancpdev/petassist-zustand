@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .fondo {
-    background-color: #141414;
+    background-color: #000000;
 }
 
 .sombras-md {
-    box-shadow: 0 0 5px 3px rgb(61, 61, 61);
+    box-shadow: 0 0 2px 1px rgb(132, 132, 132);
 }
 
 .bg-cuadros {
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(0, 0, 0);
 }
