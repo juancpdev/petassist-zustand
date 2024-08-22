@@ -12,7 +12,7 @@ function App() {
           <span className=" text-yellow-300">Veterinaria</span>
         </h1>
 
-        <div className="md:flex mt-9">
+        <div className="md:flex mt-9 gap-5 mx-5 md:gap-10 lg:mx-20">
           <PatientForm/>
           <PatientList/>
         </div>

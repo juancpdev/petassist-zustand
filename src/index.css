@@ -7,5 +7,9 @@
 }
 
 .sombras-md {
-    box-shadow: 0 0 10px 3px rgba(95, 95, 95, 0.404);
+    box-shadow: 0 0 5px 3px rgb(61, 61, 61);
+}
+
+.bg-cuadros {
+    background-color: rgb(31, 31, 31);
 }

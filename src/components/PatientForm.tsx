@@ -1,26 +1,28 @@
 import { useForm } from "react-hook-form"
 import Errors from "./Errors";
 import { DraftPatient } from "../types";
+import { usePatientStore } from "../store";
 
 export default function PatientForm() {
+
+    const { addPatient } = usePatientStore()
   
     const { register, handleSubmit, formState: {errors} } = useForm<DraftPatient>()
 
     const registerPatient = (data : DraftPatient) => {
-        console.log(data);
-        
+        addPatient(data)
     }
 
     return (
-      <div className="md:w-1/2 lg:w-2/5 mx-5">
+      <div className="md:w-1/2 lg:w-2/5 ">
 
-          <p className="text-lg mt-5 text-center mb-5 text-white">
+          <p className="text-lg mt-5 text-center mb-5 text-white ">
               Añade Pacientes y {''}
               <span className="text-yellow-300 font-bold">Administralos</span>
           </p>
   
           <form 
-              className=" sombras-md rounded-lg py-10 px-5 mb-10"
+              className=" sombras-md rounded-lg py-10 px-5 mb-10 bg-cuadros"
               noValidate
               onSubmit={handleSubmit(registerPatient)}
           >
