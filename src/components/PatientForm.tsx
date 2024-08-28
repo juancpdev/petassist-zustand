@@ -7,22 +7,23 @@ export default function PatientForm() {
 
     const { addPatient } = usePatientStore()
   
-    const { register, handleSubmit, formState: {errors} } = useForm<DraftPatient>()
+    const { register, handleSubmit, formState: {errors}, reset } = useForm<DraftPatient>()
 
     const registerPatient = (data : DraftPatient) => {
         addPatient(data)
+        reset()
     }
 
     return (
       <div className="md:w-1/2 lg:w-2/5 ">
 
-          <p className="text-lg mt-5 text-center mb-5 text-white ">
+          <p className="text-lg mt-5 text-center mb-8 text-white ">
               Añade Pacientes y {''}
               <span className="text-yellow-300 font-bold">Administralos</span>
           </p>
   
           <form 
-              className=" sombras-md rounded-lg py-10 px-5 mb-10 bg-cuadros"
+              className=" sombras-md rounded-lg py-10 px-5 mb-10 bg-cuadros m-3"
               noValidate
               onSubmit={handleSubmit(registerPatient)}
           >

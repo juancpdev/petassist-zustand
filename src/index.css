@@ -13,3 +13,11 @@
 .bg-cuadros {
     background-color: rgb(0, 0, 0);
 }
+
+.altura-list {
+    height: 39rem;
+}
+
+.scroll-edit {
+    scrollbar-color: #fde047 black; /* Para Firefox */
+}

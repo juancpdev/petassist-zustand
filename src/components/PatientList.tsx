@@ -14,12 +14,14 @@ export default function PatientList() {
                         Listado de {''}
                         <span className="text-yellow-300 font-bold">Pacientes</span>
                     </p>
-                    {patients.map((patient) => (
-                        <PatientDetails
-                            key={patient.id}
-                            patient={patient}
-                        />
-                    ))}
+                    <div className=" overflow-y-scroll altura-list p-3 scroll-edit">
+                        {patients.map((patient) => (
+                            <PatientDetails
+                                key={patient.id}
+                                patient={patient}
+                            />
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <div>
