@@ -7,7 +7,7 @@ export default function PatientList() {
     const { patients } = usePatientStore()
     
     return ( 
-        <div className="md:w-1/2 lg:w-2/5 flex-1 ">
+        <div className="md:w-1/2 ">
             {patients.length ? (
                 <div>
                     <p className="text-lg mt-5 text-center mb-5 text-white">

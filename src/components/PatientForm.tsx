@@ -2,20 +2,39 @@ import { useForm } from "react-hook-form"
 import Errors from "./Errors";
 import { DraftPatient } from "../types";
 import { usePatientStore } from "../store";
+import { useEffect } from "react";
 
 export default function PatientForm() {
 
-    const { addPatient } = usePatientStore()
+    const { addPatient, activeId, patients, updatePatient } = usePatientStore()
   
-    const { register, handleSubmit, formState: {errors}, reset } = useForm<DraftPatient>()
+    const { register, handleSubmit, setValue, formState: {errors}, reset } = useForm<DraftPatient>()
+
+    useEffect(() => {
+        if(activeId) {
+            const activePatient = patients.filter(patient => patient.id === activeId)[0]
+            setValue('name', activePatient.name)
+            setValue('caretaker', activePatient.caretaker)
+            setValue('date', activePatient.date)
+            setValue('email', activePatient.email)
+            setValue('symptoms', activePatient.symptoms)
+        }
+    })
 
     const registerPatient = (data : DraftPatient) => {
-        addPatient(data)
+        
+        if(activeId) {
+            updatePatient(data)
+        }
+        else {
+            addPatient(data)
+        }
+        
         reset()
     }
 
     return (
-      <div className="md:w-1/2 lg:w-2/5 ">
+      <div className="md:w-1/2 ">
 
           <p className="text-lg mt-5 text-center mb-8 text-white ">
               Añade Pacientes y {''}
@@ -23,7 +42,7 @@ export default function PatientForm() {
           </p>
   
           <form 
-              className=" sombras-md rounded-lg py-10 px-5 mb-10 bg-cuadros m-3"
+              className=" sombras-md rounded-lg pt-10 pb-5 px-5 mb-10 bg-cuadros m-3"
               noValidate
               onSubmit={handleSubmit(registerPatient)}
           >
@@ -140,7 +159,7 @@ export default function PatientForm() {
                   </label>
                   <textarea  
                       id="symptoms"
-                      className="w-full p-3  border border-gray-100 rounded-lg"  
+                      className="w-full p-3 border border-gray-100 rounded-lg"  
                       placeholder="Síntomas del paciente" 
                       {...register(
                         "symptoms", { 
@@ -157,9 +176,8 @@ export default function PatientForm() {
   
               <input
                   type="submit"
-                  className="bg-yellow-300 w-full p-3 text-black uppercase font-bold hover:bg-yellow-400 cursor-pointer transition-colors"
-                  value='Guardar Paciente'
-                  
+                  className="bg-yellow-300 w-full p-3 text-black uppercase font-bold hover:bg-yellow-400 cursor-pointer transition-colors rounded-md"
+                  value='Guardar Paciente'            
               />
           </form> 
       </div>
