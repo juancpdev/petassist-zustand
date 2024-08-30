@@ -5,7 +5,7 @@ export type PatientDetailItemProp = {
 
 export default function PatientDetailItem({label, data}: PatientDetailItemProp) {
   return (
-    <div >
+    <div>
         <p className="font-bold uppercase text-yellow-200">
           {label}: {''}
           <span className="font-normal normal-case text-white">{data}</span>

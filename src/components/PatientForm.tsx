@@ -56,7 +56,7 @@ export default function PatientForm() {
                     </label>
                     <input  
                         id="name"
-                        className="w-full p-3  border border-gray-100 rounded-lg"  
+                        className="w-full p-3 bg-black text-white border border-gray-600 rounded-lg"  
                         type="text" 
                         placeholder="Nombre del Paciente" 
                         {...register(
@@ -88,7 +88,7 @@ export default function PatientForm() {
                   </label>
                   <input  
                       id="caretaker"
-                      className="w-full p-3  border border-gray-100 rounded-lg"  
+                      className="w-full p-3  bg-black text-white border border-gray-600 rounded-lg"  
                       type="text" 
                       placeholder="Nombre del Propietario" 
                       {...register(
@@ -119,7 +119,7 @@ export default function PatientForm() {
                 </label>
                 <input  
                     id="email"
-                    className="w-full p-3  border border-gray-100 rounded-lg"  
+                    className="w-full p-3 bg-black text-white border border-gray-600 rounded-lg"  
                     type="email" 
                     placeholder="Email de Registro" 
                     {...register("email", {
@@ -143,7 +143,7 @@ export default function PatientForm() {
                   </label>
                   <input  
                       id="date"
-                      className="w-full p-3  border border-gray-100 rounded-lg"  
+                      className="w-full p-3 bg-black text-white border border-gray-600 rounded-lg"  
                       type="date" 
                       {...register(
                         "date", { 
@@ -163,7 +163,7 @@ export default function PatientForm() {
                   </label>
                   <textarea  
                       id="symptoms"
-                      className="w-full p-3 border border-gray-100 rounded-lg"  
+                      className="w-full p-3 bg-black text-white border border-gray-600 rounded-lg"  
                       placeholder="Síntomas del paciente" 
                       {...register(
                         "symptoms", { 

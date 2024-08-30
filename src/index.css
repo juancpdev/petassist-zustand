@@ -10,14 +10,30 @@
     box-shadow: 0 0 2px 1px rgb(132, 132, 132);
 }
 
+.sombras-menu {
+    box-shadow: 0 0 5px 2px rgb(134, 134, 134);
+}
+
 .bg-cuadros {
     background-color: rgb(0, 0, 0);
 }
 
 .altura-list {
-    height: 46.5rem;
+    max-height: 46.5rem;
 }
 
 .scroll-edit {
     scrollbar-color: #fde047 black; /* Para Firefox */
+}
+
+.bg-gris:hover {
+    background-color: rgba(255, 255, 255, 0.078);
+}
+
+.bg-edit {
+    background-color: rgba(255, 255, 255, 0.078);
+}
+
+.bg-edit:hover {
+    background-color: rgba(218, 218, 218, 0.17);
 }
