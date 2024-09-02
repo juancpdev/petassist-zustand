@@ -14,13 +14,16 @@ function App() {
           <span className=" text-yellow-300">Veterinaria</span>
         </h1>
 
-        <div className="md:flex mt-5 gap-5 mx-5 md:gap-10 lg:mx-20">
+        <div className="md:flex mt-5 gap-5 mx-5 md:gap-10 lg:mx-20 pb-10">
           <PatientForm/>
           <PatientList/>
         </div>
       </div>
 
       <ToastContainer/>
+      <footer className="p-6 text-center border-t-2">
+          <p className="text-sky-400 ">Created By <a className="font-bold" target="_blank" href="https://www.github.com/juancpdev">@jpdev</a></p>
+        </footer>
     </>
   )
 }
