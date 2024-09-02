@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon, XCircleIcon } from "@heroicons/react/24/solid"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { usePatientStore } from "../store"
 import PatientDetails from "./PatientDetails"
 import { useState } from "react"
