@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid"
 import { usePatientStore } from "../store"
 import PatientDetails from "./PatientDetails"
 import { useState } from "react"
@@ -14,15 +14,18 @@ export default function PatientList() {
         setFilter(e.target.value)
     }
 
-        // Función para eliminar los acentos de un string
-        const removeAccents = (str : string) => {
-            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        };
+    // Función para eliminar los acentos de un string
+    const removeAccents = (str : string) => {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    };
 
     const patientFiltered = patients.filter(patient =>
         removeAccents(patient.caretaker.toLowerCase()).startsWith(removeAccents(filter.toLowerCase()))
     );
-console.log(patientFiltered);
+
+    const emptyInput = () => {
+        setFilter('')
+    }
 
 
     return ( 
@@ -35,10 +38,12 @@ console.log(patientFiltered);
                     </p>
                     <div className="mx-3 relative rounded md:mr-7 ">
                         <MagnifyingGlassIcon className="text-white w-6 absolute h-full ml-2"/>
+                        {filter && <XMarkIcon className="text-white w-6 absolute h-full right-0 mr-2 cursor-pointer" onClick={emptyInput}/>}
                         <input 
                             type="text" 
                             placeholder="Buscar por Propietario..." 
-                            className="p-1 bg-black text-white pl-9 w-full rounded-md border py-2"
+                            className="p-1 bg-black text-white pl-9 pr-9 w-full rounded-md border py-2"
+                            value={filter}
                             onChange={e => handleChange(e)}
                         />
                     </div>
